@@ -12,6 +12,7 @@ public class Menu {
 		boolean sair = false;
 		boolean voltar = true;
 		String opcao, opcaoCondicional;
+		String sinopse = "SINOPSE: \n( - A ser preenchido )\n\nDesenvolvido e projetado por: \n - Caio Vinicius \n - João Vitor \n - Paulo Costa \n - Renan Scarpato \n\nTodos os direitos reservados. ©";
 
 		do {
 			System.out.println("┌────────────────────────────┐\n" + "│  ╔═══╗ Bem-vindo! Welcome! │▒\n"
@@ -26,19 +27,30 @@ public class Menu {
 				System.out.println("Você saiu.");
 				sair = true;
 			}
+			
 			if (opcao.contentEquals("3") || opcao.equalsIgnoreCase("sobre")) {
-				System.out.println("SINOPSE: \n( - A ser preenchido )\n");
-				System.out.println(
-						"Desenvolvido e projetado por: \n - Caio Vinicius \n - João Vitor \n - Paulo Costa \n - Renan Scarpato");
-				System.out.println("\nTodos os direitos reservados. ©");
+				
+				System.out.println(sinopse);
 				System.out.println("Voltar? (s/n)");
 				opcaoCondicional = input.next();
 				
-				if (opcaoCondicional.equalsIgnoreCase("n")) {
-					voltar = false;
-					break;
-				} else {
+				
+					
+					while (opcaoCondicional.equalsIgnoreCase("n")) {
+						
+					System.out.println(sinopse);
+					System.out.println("Voltar? (s/n)");
+					opcaoCondicional = input.next();
+					
+					
+					};
+					
+				 if (opcaoCondicional.equalsIgnoreCase("s")) {
 					voltar = true;
+				}
+				else {
+					System.out.println("Opção inválida!! \n");
+					return;
 				}
 			}
 
