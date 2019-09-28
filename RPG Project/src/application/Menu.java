@@ -11,13 +11,12 @@ public class Menu {
 		 * O caracter Unicode UTF-8 da sua IDE (Eclipse ou NetBeans) deve estar ativo/permitido para mostrar os desenhos em forma de caracteres desse jogo.
 		-> No Eclipse, acesse: Window > Preferences > General > Workspace > Text File Encoding mude Other: para Unicode UTF-8.
 		~~ Feito isso, feche e abra o Eclipse novamente.
-		No NetBeans, senta e chora. Desinstale essa droga e use uma IDE de verdade.
+		No NetBeans, senta e chora. Desinstale essa droga e use uma IDE de verdade. (RAGE!!)
 		*/
 		
 		Scanner input = new Scanner(System.in);
 
 		boolean sair = false;
-		boolean voltar = true;
 		String opcao, opcaoCondicional = null, opcaoInvalida = "Opção inválida.\nVoltar? (s/n)";
 		String sobre = "SINOPSE: \n(A ser preenchido)\n\nDesenvolvido e projetado por: \n - Caio Vinicius \n - João Vitor \n - Paulo Costa \n - Renan Scarpato \n"
 				+ "\nLinguagem desenvolvida: Java\nMatéria: Conceitos de Computação\n\n© Todos os direitos reservados.\n"; // temp = temporário
@@ -110,7 +109,7 @@ public class Menu {
 				sair = true; // novo valor aplicado para a variavel boolean (que faz o laço encerrar)
 			}
 
-		} while (!sair || !voltar);
+		} while (!sair);
 
 		input.close();
 	}
