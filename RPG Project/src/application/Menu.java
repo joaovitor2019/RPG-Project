@@ -27,7 +27,7 @@ public class Menu {
 				sair = true;
 			}
 			if (opcao.contentEquals("3") || opcao.equalsIgnoreCase("sobre")) {
-				System.out.println("SINOPSE: \n(A ser preenchido)\n");
+				System.out.println("SINOPSE: \n( A ser preenchido )\n");
 				System.out.println(
 						"Desenvolvido e projetado por: \n - Caio Vinicius \n - João Vitor \n - Paulo Costa \n - Renan Scarpato");
 				System.out.println("\nTodos os direitos reservados. ©");
