@@ -7,13 +7,13 @@ public class Menu {
 	public static void main(String[] args) {
 		// Menu Base - Exemplo ~ Protótipo v1.3
 
-		/* //////  IMPORTANTE!  //////
-		 * O caracter Unicode UTF-8 da sua IDE (Eclipse ou NetBeans) deve estar ativo/permitido para mostrar os desenhos em forma de caracteres desse jogo.
-		-> No Eclipse, acesse: Window > Preferences > General > Workspace > Text File Encoding mude Other: para Unicode UTF-8.
-		~~ Feito isso, feche e abra o Eclipse novamente.
-		No NetBeans, senta e chora. Desinstale essa droga e use uma IDE de verdade. (RAGE!!)
-		*/
-		
+		/*
+		 * ////// IMPORTANTE! ////// O caracter Unicode UTF-8 da sua IDE (Eclipse ou
+		 * NetBeans) deve estar ativo/permitido para mostrar os desenhos em forma de
+		 * caracteres desse jogo. -> No Eclipse, acesse: Window > Preferences > General
+		 * > Workspace > Text File Encoding mude Other: para Unicode UTF-8. ~~ Feito
+		 * isso, feche e abra o Eclipse novamente.
+		 */
 		Scanner input = new Scanner(System.in);
 
 		boolean sair = false;
@@ -22,7 +22,7 @@ public class Menu {
 				+ "\nLinguagem desenvolvida: Java\nMatéria: Conceitos de Computação\n\n© Todos os direitos reservados.\n"; // temp = temporário
 		String opcoes = "Você acessou as opções."; // temp
 		String jogar = "Você acessou jogar."; // temp
-		
+
 		do {
 			System.out.println("┌────────────────────────────┐\n" + "│  ╔═══╗ Bem-vindo! Welcome! │▒\n"
 					+ "│  ╚═╦═╝ MENU (Nome do jogo) │▒\n" + "╞═╤══╩══╤════════════════════╡▒\n"
@@ -40,7 +40,8 @@ public class Menu {
 				opcaoCondicional = input.next();
 
 				if (opcaoCondicional.equalsIgnoreCase("s")) {
-					continue; // retorna para o Menu, o continue traz o próximo laço tradicional sem ser switch-case, no caso o DO-WHILE do menu.
+					continue; // retorna ao Menu, o continue retorna o próximo laço condicional sem ser switch-case, no caso o DO-WHILE do menu.
+
 				} else {
 					do {
 						if (opcaoCondicional.equalsIgnoreCase("s") || opcaoCondicional.equalsIgnoreCase("n")) {
@@ -51,10 +52,9 @@ public class Menu {
 						while (!opcaoCondicional.equalsIgnoreCase("s") && !opcaoCondicional.equalsIgnoreCase("n")) {
 							System.out.println(opcaoInvalida);
 							opcaoCondicional = input.next();
-							continue;
 						}
 					} while (!opcaoCondicional.equalsIgnoreCase("s"));
-					continue; // continue necessário para o término do laço if 
+					break; // impede o laço de descer diretamente ao próximo case
 				}
 
 			case "2":
@@ -75,10 +75,9 @@ public class Menu {
 						while (!opcaoCondicional.equalsIgnoreCase("s") && !opcaoCondicional.equalsIgnoreCase("n")) {
 							System.out.println(opcaoInvalida);
 							opcaoCondicional = input.next();
-							continue;
 						}
 					} while (!opcaoCondicional.equalsIgnoreCase("s"));
-					continue;
+					break;
 				}
 			case "3":
 			case "sobre":
@@ -95,13 +94,12 @@ public class Menu {
 						}
 						System.out.println("Voltar? (s/n)");
 						opcaoCondicional = input.next();
-						while (!opcaoCondicional.equalsIgnoreCase("s") && !opcaoCondicional.equalsIgnoreCase("n")) {
+						while (!opcaoCondicional.equalsIgnoreCase("s") && !opcaoCondicional.equalsIgnoreCase("n")) { // diferente de "s" ou "n" = opcao invalida
 							System.out.println(opcaoInvalida);
 							opcaoCondicional = input.next();
-							continue;
 						}
 					} while (!opcaoCondicional.equalsIgnoreCase("s"));
-					continue;
+					break;
 				}
 			case "4":
 			case "sair":
