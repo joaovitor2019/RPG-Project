@@ -3,6 +3,46 @@ package application;
 import java.util.Scanner;
 
 public class Menu {
+	
+	
+	static Scanner input = new Scanner(System.in);
+	
+	static int  opcaoClasse() {
+		int r=0;
+		System.out.println("Selecione uma classe para iniciar o jogo: \n\n");
+		
+		System.out.print("Classe 1: \n");
+		System.out.println("Com essa você terá mais resistencia e sofrerá menos danos \n");
+		System.out.print("Classe 2: ");
+		System.out.println("Com essa classe você terá a chance de uma ressurreição \n");
+		System.out.print("Classe 3: ");
+		System.out.println("Com essa classe você poderá avanção uma pergunta: \n");
+		
+		System.out.println("Nos informe qual classe deseja jogar(1 / 2 / 3 ): ");
+		r = input.nextInt();
+		
+		
+		return r;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public static void main(String[] args) {
 		// Menu Base - Exemplo ~ Protótipo v1.3
@@ -14,14 +54,14 @@ public class Menu {
 		 * > Workspace > Text File Encoding mude Other: para Unicode UTF-8. ~~ Feito
 		 * isso, feche e abra o Eclipse novamente.
 		 */
-		Scanner input = new Scanner(System.in);
+		
 
 		boolean sair = false;
 		String opcao, opcaoCondicional = null, opcaoInvalida = "Opção inválida.\nVoltar? (s/n)";
 		String sobre = "SINOPSE: \n(A ser preenchido)\n\nDesenvolvido e projetado por: \n - Caio Vinicius \n - João Vitor \n - Paulo Costa \n - Renan Scarpato \n"
 				+ "\nLinguagem desenvolvida: Java\nMatéria: Conceitos de Computação\n\n© Todos os direitos reservados.\n"; // temp = temporário
 		String opcoes = "Você acessou as opções."; // temp
-		String jogar = "Você acessou jogar."; // temp
+	
 		System.out.println("    ____  __                 __           ______                        ________                                    __    \r\n" + 
 				"   / __ \\/ /___ _____  ___  / /_____ _   /_  __/__  ______________ _   / ____/ /_  ____ _____ ___  ____ _____  ____/ /___ \r\n" + 
 				"  / /_/ / / __ `/ __ \\/ _ \\/ __/ __ `/    / / / _ \\/ ___/ ___/ __ `/  / /   / __ \\/ __ `/ __ `__ \\/ __ `/ __ \\/ __  / __ \\\r\n" + 
@@ -61,13 +101,18 @@ public class Menu {
 					+ "│ ├──┬──┤   1. Jogar         │▒\n" + "│ └──┴──┘   2. Opções        │▒\n"
 					+ "│           3. Sobre	     │▒\n" + "│           4. Sair          │▒\n"
 					+ "└────────────────────────────┘");
-			System.out.println("\nDigite uma opção: ");
+			System.out.println("\n Digite uma opção: ");
 			opcao = input.next();
 
 			switch (opcao.toLowerCase()) { // deixa toda a opcao lida com caixa baixa
 			case "1":
 			case "jogar":
-				System.out.println(jogar);
+	
+				
+				int teste = opcaoClasse();
+				
+				System.out.println(teste);
+				
 				System.out.println("Voltar? (s/n)");
 				opcaoCondicional = input.next();
 
@@ -77,7 +122,7 @@ public class Menu {
 				} else {
 					do {
 						if (opcaoCondicional.equalsIgnoreCase("s") || opcaoCondicional.equalsIgnoreCase("n")) {
-							System.out.println(jogar);
+							
 						}
 						System.out.println("Voltar? (s/n)");
 						opcaoCondicional = input.next();
