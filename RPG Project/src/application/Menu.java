@@ -4,64 +4,9 @@ import java.util.Scanner;
 
 public class Menu {
 	
+	static Scanner input = new Scanner (System.in);
 	
-	static Scanner input = new Scanner(System.in);
-	
-	static int  opcaoClasse() {
-		int r=0;
-		System.out.println("Selecione uma classe para iniciar o jogo: \n\n");
-		
-		System.out.print("Classe 1: \n");
-		System.out.println("Com essa você terá mais resistencia e sofrerá menos danos \n");
-		System.out.print("Classe 2: ");
-		System.out.println("Com essa classe você terá a chance de uma ressurreição \n");
-		System.out.print("Classe 3: ");
-		System.out.println("Com essa classe você poderá avanção uma pergunta: \n");
-		
-		System.out.println("Nos informe qual classe deseja jogar(1 / 2 / 3 ): ");
-		r = input.nextInt();
-		
-		
-		return r;
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	public static void main(String[] args) {
-		// Menu Base - Exemplo ~ Protótipo v1.3
-
-		/*
-		 * ////// IMPORTANTE! ////// O caracter Unicode UTF-8 da sua IDE (Eclipse ou
-		 * NetBeans) deve estar ativo/permitido para mostrar os desenhos em forma de
-		 * caracteres desse jogo. -> No Eclipse, acesse: Window > Preferences > General
-		 * > Workspace > Text File Encoding mude Other: para Unicode UTF-8. ~~ Feito
-		 * isso, feche e abra o Eclipse novamente.
-		 */
-		
-
-		boolean sair = false;
-		String opcao, opcaoCondicional = null, opcaoInvalida = "Opção inválida.\nVoltar? (s/n)";
-		String sobre = "SINOPSE: \n(A ser preenchido)\n\nDesenvolvido e projetado por: \n - Caio Vinicius \n - João Vitor \n - Paulo Costa \n - Renan Scarpato \n"
-				+ "\nLinguagem desenvolvida: Java\nMatéria: Conceitos de Computação\n\n© Todos os direitos reservados.\n"; // temp = temporário
-		String opcoes = "Você acessou as opções."; // temp
-	
+	static void telaInicial() {
 		System.out.println("    ____  __                 __           ______                        ________                                    __    \r\n" + 
 				"   / __ \\/ /___ _____  ___  / /_____ _   /_  __/__  ______________ _   / ____/ /_  ____ _____ ___  ____ _____  ____/ /___ \r\n" + 
 				"  / /_/ / / __ `/ __ \\/ _ \\/ __/ __ `/    / / / _ \\/ ___/ ___/ __ `/  / /   / __ \\/ __ `/ __ `__ \\/ __ `/ __ \\/ __  / __ \\\r\n" + 
@@ -95,97 +40,108 @@ public class Menu {
 				"                     101          10000000000000000111                    \r\n" + 
 				"                       10011        10000000000000                        \r\n" + 
 				"                            111       100000001                      \n\n");
-		do {
-			System.out.println("┌────────────────────────────┐\n" + "│  ╔═══╗ Bem-vindo! Welcome! │▒\n"
-					+ "│  ╚═╦═╝         MENU        │▒\n" + "╞═╤══╩══╤════════════════════╡▒\n"
-					+ "│ ├──┬──┤   1. Jogar         │▒\n" + "│ └──┴──┘   2. Opções        │▒\n"
-					+ "│           3. Sobre	     │▒\n" + "│           4. Sair          │▒\n"
-					+ "└────────────────────────────┘");
-			System.out.println("\n Digite uma opção: ");
-			opcao = input.next();
-
-			switch (opcao.toLowerCase()) { // deixa toda a opcao lida com caixa baixa
-			case "1":
-			case "jogar":
-	
-				
-				int teste = opcaoClasse();
-				
-				System.out.println(teste);
-				
-				System.out.println("Voltar? (s/n)");
-				opcaoCondicional = input.next();
-
-				if (opcaoCondicional.equalsIgnoreCase("s")) {
-					continue; // retorna ao Menu, o continue retorna o próximo laço condicional sem ser switch-case, no caso o DO-WHILE do menu.
-
-				} else {
-					do {
-						if (opcaoCondicional.equalsIgnoreCase("s") || opcaoCondicional.equalsIgnoreCase("n")) {
-							
-						}
-						System.out.println("Voltar? (s/n)");
-						opcaoCondicional = input.next();
-						while (!opcaoCondicional.equalsIgnoreCase("s") && !opcaoCondicional.equalsIgnoreCase("n")) {
-							System.out.println(opcaoInvalida);
-							opcaoCondicional = input.next();
-						}
-					} while (!opcaoCondicional.equalsIgnoreCase("s"));
-					break; // impede o laço de descer diretamente ao próximo case
-				}
-
-			case "2":
-			case "opcoes":
-				System.out.println(opcoes);
-				System.out.println("Voltar? (s/n)");
-				opcaoCondicional = input.next();
-
-				if (opcaoCondicional.equalsIgnoreCase("s")) {
-					continue; // retorna ao Menu
-				} else {
-					do {
-						if (opcaoCondicional.equalsIgnoreCase("s") || opcaoCondicional.equalsIgnoreCase("n")) {
-							System.out.println(opcoes);
-						}
-						System.out.println("Voltar? (s/n)");
-						opcaoCondicional = input.next();
-						while (!opcaoCondicional.equalsIgnoreCase("s") && !opcaoCondicional.equalsIgnoreCase("n")) {
-							System.out.println(opcaoInvalida);
-							opcaoCondicional = input.next();
-						}
-					} while (!opcaoCondicional.equalsIgnoreCase("s"));
-					break;
-				}
-			case "3":
-			case "sobre":
-				System.out.println(sobre);
-				System.out.println("Voltar? (s/n)");
-				opcaoCondicional = input.next();
-
-				if (opcaoCondicional.equalsIgnoreCase("s")) {
-					continue; // retorna ao Menu
-				} else {
-					do {
-						if (opcaoCondicional.equalsIgnoreCase("s") || opcaoCondicional.equalsIgnoreCase("n")) {
-							System.out.println(sobre);
-						}
-						System.out.println("Voltar? (s/n)");
-						opcaoCondicional = input.next();
-						while (!opcaoCondicional.equalsIgnoreCase("s") && !opcaoCondicional.equalsIgnoreCase("n")) { // diferente de "s" ou "n" = opcao invalida
-							System.out.println(opcaoInvalida);
-							opcaoCondicional = input.next();
-						}
-					} while (!opcaoCondicional.equalsIgnoreCase("s"));
-					break;
-				}
-			case "4":
-			case "sair":
-				System.out.println("Você saiu do jogo.");
-				sair = true; // novo valor aplicado para a variavel boolean (que faz o laço encerrar)
-			}
-
-		} while (!sair);
-
-		input.close();
 	}
+	
+	static int menu() {
+		int opcao = 0;
+		System.out.println("┌────────────────────────────┐\n" + "│  ╔═══╗ Bem-vindo! Welcome! │▒\n"
+				+ "│  ╚═╦═╝         MENU        │▒\n" + "╞═╤══╩══╤════════════════════╡▒\n"
+				+ "│ ├──┬──┤   1. Jogar         │▒\n" + "│ └──┴──┘   2. Opções        │▒\n"
+				+ "│           3. Sobre	     │▒\n" + "│           4. Sair          │▒\n"
+				+ "└────────────────────────────┘");
+		System.out.println("\n Digite uma opção: ");
+		
+		opcao = input.nextInt();
+		
+		return opcao;
+	}
+	static char opcoesJogo() {
+		boolean escolha = true;
+		char op = 'a';
+		
+		do {
+		System.out.println("opcoes do jogo");// temporário
+		System.out.println("Deseja voltar?(s /n)");
+		op = input.next().charAt(0);
+		
+		while (op != 's' && op != 'n') {
+			System.out.println("Digite uma opção válida! ");
+			System.out.println("Deseja voltar?(s /n)");
+			op = input.next().charAt(0);
+		}
+		if (op == 'n') {
+			escolha = false;
+		}
+		else if (op == 's') {
+			escolha = true;
+		}
+		
+		}while (!escolha);
+		
+		
+		
+		return op;
+	}
+	static char sobreJogo() {
+		boolean escolha = true;
+		char op = 'a';
+		
+		do {
+		System.out.println("Informaçoes sobre o jogo");// temporário
+		System.out.println("Deseja voltar?(s /n)");
+		op = input.next().charAt(0);
+		
+		while (op != 's' && op != 'n') {
+			System.out.println("Digite uma opção válida! ");
+			System.out.println("Deseja voltar?(s /n)");
+			op = input.next().charAt(0);
+		}
+		if (op == 'n') {
+			escolha = false;
+		}
+		else if (op == 's') {
+			escolha = true;
+		}
+		
+		}while (!escolha);
+		
+		
+		
+		return op;
+		
+	}
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		int op = 0;
+		char returnMenu = 'a';
+		telaInicial(); // tela inicial com o logo do jogo e o nome
+		do {
+		op = menu(); // menu de opcoes
+			if (op == 2) {
+				returnMenu = opcoesJogo();
+			}
+			
+			if (op == 3) {
+				returnMenu = sobreJogo();
+			}
+			
+		}while(op != 1 && op != 4);
+		
+		if (op == 4) {
+			System.out.println("Você saiu do jogo");
+			input.close();
+		}
+		else {
+		System.out.println("entrou no jogo");
+		}
+		
+		
+		
+	}
+ 
 }
