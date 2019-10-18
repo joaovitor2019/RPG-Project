@@ -154,7 +154,7 @@ public class Menu {
 		
 		if (op == 4) {
 			System.out.println("Você saiu do jogo");
-			input.close();
+			return;
 		}
 		else {
 		System.out.println("Entramos no jogo! \n\nPara começar, precisamos que escolha uma classe (a classe escolhida será a classe será sua característica o jogo inteiro \n)");
