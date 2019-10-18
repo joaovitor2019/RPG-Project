@@ -4,7 +4,7 @@
 
 
 
-<b>Challenges:<b>
+<b>Challenges:</b>
   
  Project based on <i>Design Thinking</i>;
  
@@ -20,7 +20,7 @@ ______________________________________________________
 ### Planeta Terra Chamando!
       Este é o desenvolvimento de um jogo RPG para prática e domínio do Java.
  
- <b>Desafios: <b>
+ <b>Desafios: </b>
 
 Projeto realizado em cima da metodologia de <i>Design Thinking</i>;
 
