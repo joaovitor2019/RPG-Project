@@ -1,6 +1,6 @@
 ## RPG-Project 
 ### Earth's Calling! 
-      This is a development of a RPG game for mastering Java.
+      Development of a RPG game for mastering Java.
 
 
 
@@ -18,7 +18,7 @@ ______________________________________________________
 
 
 ### Planeta Terra Chamando!
-      Este é o desenvolvimento de um jogo RPG para prática e domínio do Java.
+      Desenvolvimento de um jogo RPG para prática e domínio do Java.
  
  <b>Desafios: </b>
 
