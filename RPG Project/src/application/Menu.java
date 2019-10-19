@@ -47,7 +47,7 @@ public class Menu {
 		System.out.println("┌────────────────────────────┐\n" + "│  ╔═══╗ Bem-vindo! Welcome! │▒\n"
 				+ "│  ╚═╦═╝        MENU         │▒\n" + "╞═╤══╩══╤════════════════════╡▒\n"
 				+ "│ ├──┬──┤     1. Jogar       │▒\n" + "│ └──┴──┘     2. Opções      │▒\n"
-				+ "│             3. Sobre	   │▒\n" + "│             4. Sair        │▒\n"
+				+ "│             3. Sobre	     │▒\n" + "│             4. Sair        │▒\n"
 				+ "└────────────────────────────┘");
 		System.out.println("\n Digite uma opção: ");
 		opcao = input.nextInt();
@@ -56,7 +56,7 @@ public class Menu {
 
 	static char opcoesJogo() {
 		boolean escolha = true;
-		char op = 'a';
+		char op = 0;
 
 		do {
 			System.out.println("Opcoes do jogo."); // temporário
@@ -80,7 +80,7 @@ public class Menu {
 
 	static char sobreJogo() {
 		boolean escolha = true;
-		char op = 'a';
+		char op = 0;
 
 		do {
 			System.out.println("SINOPSE:\n"
