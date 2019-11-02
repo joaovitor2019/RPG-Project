@@ -2,7 +2,7 @@ package application;
 
 import java.util.Scanner;
 
-public class Menu {
+public class Game {
 
 	static Scanner input = new Scanner(System.in);
 
@@ -130,42 +130,63 @@ public class Menu {
 		return opcaoClasse;
 	}
 
-	static String informacoesClasse(String classe) {
-		if (classe.contains("andro") || classe.equals("1")) {
+	static char informacoesClasse(String classe) {
+		char escolhaClasse = classe.charAt(0);
+
+		if (escolhaClasse == 'a' || classe.equals("1")) {
 			System.out.println("Descrição da classe Andromedans");
-			return "1";
-		} else if (classe.contains("siri") || classe.equals("2")) {
+			escolhaClasse = '1';
+		} else if (escolhaClasse == 's' || classe.equals("2")) {
 			System.out.println("Descrição da classe Sirians");
-			return "2";
-		} else if (classe.contains("rep") || classe.equals("3")) {
+			escolhaClasse = '2';
+		} else if (escolhaClasse == 'r' || classe.equals("3")) {
 			System.out.println("Descrição da classe Reptilians");
-			return "3";
+			escolhaClasse = '3';
 		}
-		return classe;
+		return escolhaClasse;
+	}
+
+	static boolean validaClasse(char classe) {
+		boolean validador = true;
+		switch (classe) {
+		case '1':
+			System.out.println("Você escolheu Andromedans. Confirma escolha? (s/n)");
+			if (input.next().charAt(0) != 's') {
+				return validador = false;
+			}
+			return validador;
+		case '2':
+			System.out.println("Você escolheu Sirians. Confirma escolha? (s/n)");
+			if (input.next().charAt(0) != 's') {
+				return validador = false;
+			}
+			return validador;
+		case '3':
+			System.out.println("Você escolheu Reptilians. Confirma escolha? (s/n)");
+			if (input.next().charAt(0) != 's') {
+				return validador = false;
+			}
+			return validador;
+		default:
+			System.out.println("Classe inválida. Faça sua escolha novamente");
+			return validador = false;
+		}
 	}
 
 	static void salaComando() {
-		System.out.println(
-				"╔═══════════════════════════════╗\r\n"
-						+ "║        SALA DE COMANDO        ║\r\n"
-						+ "╠═══╦═══════════════════════════╣\r\n"
-						+ "║ 1 ║    Sala de Navegação      ║\r\n"
-						+ "╠═══╬═══════════════════════════╣\r\n"
-						+ "║ 2 ║    Sala de Manutenção     ║\r\n"
-						+ "╠═══╬═══════════════════════════╣\r\n"
-						+ "║ 3 ║    Dormitório             ║\r\n"
-						+ "╠═══╬═══════════════════════════╣\r\n"
-						+ "║ 4 ║    Sala Médica            ║\r\n"
-						+ "╚═══╩═══════════════════════════╝"
-				
-				);
-		int retornoSala = 0;
+		System.out.println("╔═══════════════════════════════╗\r\n" + "║      SALA DE COMANDO    🚀                ║\r\n"
+				+ "╠═══╦═══════════════════════════╣\r\n" + "║ 1 ║    Sala de Navegação      ║\r\n"
+				+ "╠═══╬═══════════════════════════╣\r\n" + "║ 2 ║    Sala de Manutenção     ║\r\n"
+				+ "╠═══╬═══════════════════════════╣\r\n" + "║ 3 ║    Dormitório             ║\r\n"
+				+ "╠═══╬═══════════════════════════╣\r\n" + "║ 4 ║    Sala Médica            ║\r\n"
+				+ "╚═══╩═══════════════════════════╝");
+		int sala = 0;
 
 		do {
-			System.out.println("Digite para entrar: ");
-			retornoSala = input.nextInt();
+			System.out.println("Digite para acessar: ");
+			sala = input.nextInt();
 
-			switch (retornoSala) {
+			switch (sala) {
 			case 1:
 				salaNavegacao();
 				break;
@@ -179,37 +200,62 @@ public class Menu {
 				salaMedica();
 				break;
 			default:
-				System.out.println("Comando inválido, digite novamente:");
+				System.out.println("Comando inválido, digite novamente: ");
 			}
-		} while (retornoSala < 1 || retornoSala > 4);
-
+		} while (sala < 1 || sala > 4);
 	}
 
 	static void salaNavegacao() {
 		System.out.println("Você está na Sala de Navegação.");
+
+		System.out.println("Deseja voltar para Sala de Comando? (s/n)");
+		char opcao = input.next().charAt(0);
+		if (opcao == 's') {
+			salaComando();
+		} else {
+			salaNavegacao();
+		}
 	}
 
 	static void salaMedica() {
 		System.out.println("Você está na Sala Médica.");
 
-		System.out.println("Deseja voltar pra Sala de Comando? (s/n)");
+		System.out.println("Deseja voltar para Sala de Comando? (s/n)");
 		char opcao = input.next().charAt(0);
 		if (opcao == 's') {
 			salaComando();
+		} else {
+			salaMedica();
 		}
 	}
 
 	static void salaDormitorio() {
 		System.out.println("Você está no Dormitório.");
+
+		System.out.println("Deseja voltar para Sala de Comando? (s/n)");
+		char opcao = input.next().charAt(0);
+		if (opcao == 's') {
+			salaComando();
+		} else {
+			salaDormitorio();
+		}
 	}
 
 	static void salaManutencao() {
 		System.out.println("Você está na Sala de Manutenção.");
+
+		System.out.println("Deseja voltar para Sala de Comando? (s/n)");
+		char opcao = input.next().charAt(0);
+		if (opcao == 's') {
+			salaComando();
+		} else {
+			salaManutencao();
+		}
 	}
 
 	public static void main(String[] args) {
 		int op;
-		char returnMenu;
+		char returnMenu, classe, opcao;
 		telaInicial(); // tela inicial com o logo e o nome do jogo
 		do {
 			op = menu(); // menu de opcoes
@@ -228,18 +274,20 @@ public class Menu {
 		}
 
 		System.out.println("Você entrou no jogo!");
-		System.out.println("\n ========== Introdução ========= \n");
-		String classe = escolhaClasse();
-		informacoesClasse(classe);
-
-		System.out.println("Confirma escolha? (1-Sim, 2-Nao)");
-		op = input.nextInt();
-		if (op == 1) {
-			salaComando();
-		} else {
-			classe = escolhaClasse();
-			informacoesClasse(classe);
+		System.out.println("\nÉ a sua primeira vez jogando? (s/n)");
+		if (input.next().charAt(0) == 's') {
+			System.out.println("Bem-vindo!");
+			System.out.println("****** TUTORIAL ******");
 		}
+
+		System.out.println("\n ========== Introdução ========= \n");
+
+		do {
+			String classeEscolhida = escolhaClasse(); // introduz a tabela de classes
+			classe = informacoesClasse(classeEscolhida); // pega a escolha de classe e traz pra variavel
+		} while (validaClasse(classe) != true); // se a classe não for valida, volta ao procedimento de escolha
+
+		salaComando();
 
 		input.close();
 	}
