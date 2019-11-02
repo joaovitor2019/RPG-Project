@@ -114,8 +114,7 @@ public class Menu {
 		return op;
 	}
 
-	static int opcaoClasse() {
-		int escolhaClasse = 0;
+	static String escolhaClasse() {
 		System.out.println("╔═════════════╦═════════════════════════════════════════════════╗\r\n"
 				+ "║   CLASSES   ║            (Habilidades a preencher)            ║\r\n"
 				+ "╠═════════════╬═════════════════════════════════════════════════╣\r\n"
@@ -127,69 +126,78 @@ public class Menu {
 				+ "╚═════════════╩═════════════════════════════════════════════════╝");
 
 		System.out.println("Escolha sua classe!");
-		escolhaClasse = input.nextInt();
-		return escolhaClasse;
+		String opcaoClasse = input.next();
+		return opcaoClasse;
 	}
-	
-	static void salaDeComando() {
-		System.out.println("aqui é a sala de comando \n 1 = sala de navegacao \n 2 = manutencao \n 3 = dormitorio \n 4 = sala medica \n\n\n\n\n");
-		
 
-		
-		int retornoSala = 0;
-		
-		do {
-			System.out.println("Me informe para onde deseja ir:");
-			 retornoSala = input.nextInt();
-			
-		switch (retornoSala) {
-		case 1: 
-			salaDeNavegacao();
-		
-		break;
-		case 2: 
-			manutencao();
-		
-		break;
-		case 3: 
-			dormitorio();
-		
-		break;
-		case 4: 
-			salaMedica();
-		break;
-		default: System.out.println("Comando inválido, digite novamente:");
-		
-		}}while(retornoSala < 1 || retornoSala > 4);
-	
+	static String informacoesClasse(String classe) {
+		if (classe.contains("andro") || classe.equals("1")) {
+			System.out.println("Descrição da classe Andromedans");
+			return "1";
+		} else if (classe.contains("siri") || classe.equals("2")) {
+			System.out.println("Descrição da classe Sirians");
+			return "2";
+		} else if (classe.contains("rep") || classe.equals("3")) {
+			System.out.println("Descrição da classe Reptilians");
+			return "3";
+		}
+		return classe;
 	}
-	
-	static void salaDeNavegacao () {
+
+	static void salaComando() {
+		System.out.println(
+				"Você está na Sala de Comando! \n 1 - Acessar Sala de navegação \n 2 - Acessar Sala de Manutenção \n 3 - Acessar Dormitório \n 4 - Acessar Sala Médica \n\n");
+		int retornoSala = 0;
+
+		do {
+			System.out.println("Digite para onde deseja ir:");
+			retornoSala = input.nextInt();
+
+			switch (retornoSala) {
+			case 1:
+				salaNavegacao();
+				break;
+			case 2:
+				salaManutencao();
+				break;
+			case 3:
+				salaDormitorio();
+				break;
+			case 4:
+				salaMedica();
+				break;
+			default:
+				System.out.println("Comando inválido, digite novamente:");
+			}
+		} while (retornoSala < 1 || retornoSala > 4);
+
+	}
+
+	static void salaNavegacao() {
 		System.out.println("Você está na sala de navegação");
 	}
-	
-	static void salaMedica () {
+
+	static void salaMedica() {
 		System.out.println("Você está na sala médica");
-		
-		System.out.println("Deseja voltar pra sala de comando?");
-		int a = input.nextInt();
-		if (a == 1) {
-			salaDeComando();	
+
+		System.out.println("Deseja voltar pra sala de comando? (s/n)");
+		char opcao = input.next().charAt(0);
+		if (opcao == 's') {
+			salaComando();
 		}
-		
 	}
-	
-	static void dormitorio () {
+
+	static void salaDormitorio() {
 		System.out.println("Você está no dormitório");
 	}
-	
-	static void manutencao () {
+
+	static void salaManutencao() {
 		System.out.println("Você está na sala de manutencao");
 	}
 
 	public static void main(String[] args) {
-		int op = 0;
-		char returnMenu = 0;
+		int op;
+		char returnMenu;
 		telaInicial(); // tela inicial com o logo e o nome do jogo
 		do {
 			op = menu(); // menu de opcoes
@@ -205,17 +213,21 @@ public class Menu {
 		if (op == 4) {
 			System.out.println("Você saiu do jogo.");
 			return;
-		} else {
-			System.out.println("Você entrou no jogo!");
-			System.out.println("Introdução");
 		}
-		
-		opcaoClasse();
-		
-		
-		salaDeComando(); // Desenho da sala de comando
-		
-		
+
+		System.out.println("Você entrou no jogo!");
+		System.out.println("\n ========== Introdução ========= \n");
+		String classe = escolhaClasse();
+		informacoesClasse(classe);
+
+		System.out.println("Confirma escolha? (1-Sim, 2-Nao)");
+		op = input.nextInt();
+		if (op == 1) {
+			salaComando();
+		} else {
+			classe = escolhaClasse();
+			informacoesClasse(classe);
+		}
 
 		input.close();
 	}
