@@ -130,6 +130,62 @@ public class Menu {
 		escolhaClasse = input.nextInt();
 		return escolhaClasse;
 	}
+	
+	static void salaDeComando() {
+		System.out.println("aqui é a sala de comando \n 1 = sala de navegacao \n 2 = manutencao \n 3 = dormitorio \n 4 = sala medica \n\n\n\n\n");
+		
+
+		
+		int retornoSala = 0;
+		
+		do {
+			System.out.println("Me informe para onde deseja ir:");
+			 retornoSala = input.nextInt();
+			
+		switch (retornoSala) {
+		case 1: 
+			salaDeNavegacao();
+		
+		break;
+		case 2: 
+			manutencao();
+		
+		break;
+		case 3: 
+			dormitorio();
+		
+		break;
+		case 4: 
+			salaMedica();
+		break;
+		default: System.out.println("Comando inválido, digite novamente:");
+		
+		}}while(retornoSala < 1 || retornoSala > 4);
+	
+	}
+	
+	static void salaDeNavegacao () {
+		System.out.println("Você está na sala de navegação");
+	}
+	
+	static void salaMedica () {
+		System.out.println("Você está na sala médica");
+		
+		System.out.println("Deseja voltar pra sala de comando?");
+		int a = input.nextInt();
+		if (a == 1) {
+			salaDeComando();	
+		}
+		
+	}
+	
+	static void dormitorio () {
+		System.out.println("Você está no dormitório");
+	}
+	
+	static void manutencao () {
+		System.out.println("Você está na sala de manutencao");
+	}
 
 	public static void main(String[] args) {
 		int op = 0;
@@ -153,7 +209,13 @@ public class Menu {
 			System.out.println("Você entrou no jogo!");
 			System.out.println("Introdução");
 		}
+		
 		opcaoClasse();
+		
+		
+		salaDeComando(); // Desenho da sala de comando
+		
+		
 
 		input.close();
 	}
