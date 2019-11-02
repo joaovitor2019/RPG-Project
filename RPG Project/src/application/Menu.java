@@ -146,11 +146,23 @@ public class Menu {
 
 	static void salaComando() {
 		System.out.println(
-				"Você está na Sala de Comando! \n 1 - Acessar Sala de navegação \n 2 - Acessar Sala de Manutenção \n 3 - Acessar Dormitório \n 4 - Acessar Sala Médica \n\n");
+				"╔════════════════════════════════╗\r\n"
+						+ "║        SALA DE COMANDO         ║\r\n"
+						+ "╠═══╦════════════════════════════╣\r\n"
+						+ "║ 1 ║    Sala de Navegação       ║\r\n"
+						+ "╠═══╬════════════════════════════╣\r\n"
+						+ "║ 2 ║    Sala de Manutenção      ║\r\n"
+						+ "╠═══╬════════════════════════════╣\r\n"
+						+ "║ 3 ║    Dormitório              ║\r\n"
+						+ "╠═══╬════════════════════════════╣\r\n"
+						+ "║ 4 ║    Sala Médica             ║\r\n"
+						+ "╚═══╩════════════════════════════╝"
+				
+				);
 		int retornoSala = 0;
 
 		do {
-			System.out.println("Digite para onde deseja ir:");
+			System.out.println("Digite para entrar: ");
 			retornoSala = input.nextInt();
 
 			switch (retornoSala) {
@@ -174,13 +186,13 @@ public class Menu {
 	}
 
 	static void salaNavegacao() {
-		System.out.println("Você está na sala de navegação");
+		System.out.println("Você está na Sala de Navegação.");
 	}
 
 	static void salaMedica() {
-		System.out.println("Você está na sala médica");
+		System.out.println("Você está na Sala Médica.");
 
-		System.out.println("Deseja voltar pra sala de comando? (s/n)");
+		System.out.println("Deseja voltar pra Sala de Comando? (s/n)");
 		char opcao = input.next().charAt(0);
 		if (opcao == 's') {
 			salaComando();
@@ -188,11 +200,11 @@ public class Menu {
 	}
 
 	static void salaDormitorio() {
-		System.out.println("Você está no dormitório");
+		System.out.println("Você está no Dormitório.");
 	}
 
 	static void salaManutencao() {
-		System.out.println("Você está na sala de manutencao");
+		System.out.println("Você está na Sala de Manutenção.");
 	}
 
 	public static void main(String[] args) {
