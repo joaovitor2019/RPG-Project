@@ -133,13 +133,13 @@ public class Game {
 	static char informacoesClasse(String classe) {
 		char escolhaClasse = classe.charAt(0);
 
-		if (escolhaClasse == 'a' || classe.equals("1")) {
+		if (escolhaClasse == 'a' || classe.equals("1") || escolhaClasse == 'A') {
 			System.out.println("Descrição da classe Andromedans");
 			escolhaClasse = '1';
-		} else if (escolhaClasse == 's' || classe.equals("2")) {
+		} else if (escolhaClasse == 's' || classe.equals("2") || escolhaClasse == 'S') {
 			System.out.println("Descrição da classe Sirians");
 			escolhaClasse = '2';
-		} else if (escolhaClasse == 'r' || classe.equals("3")) {
+		} else if (escolhaClasse == 'r' || classe.equals("3") || escolhaClasse == 'R') {
 			System.out.println("Descrição da classe Reptilians");
 			escolhaClasse = '3';
 		}
@@ -244,6 +244,37 @@ public class Game {
 	static void salaManutencao() {
 		System.out.println("Você está na Sala de Manutenção.");
 
+		System.out.println("╔═══════════════════════════════╗\r\n" + "║      SALA DE MANUTENÇÃO 🔧               ║\r\n"
+				+ "╠═══╦═══════════════════════════╣\r\n" + "║ 1 ║    Reparar Oxigénio       ║\r\n"
+				+ "╠═══╬═══════════════════════════╣\r\n" + "║ 2 ║    Reparar Reator         ║\r\n"
+				+ "╠═══╬═══════════════════════════╣\r\n" + "║ 3 ║    Reparar Portas         ║\r\n"
+				+ "╠═══╬═══════════════════════════╣\r\n" + "║ 4 ║    Reparar ----           ║\r\n"
+				+ "╚═══╩═══════════════════════════╝");
+		
+		int salaManutencao = 0;
+		do {
+			System.out.println("Digite para acessar: ");
+			salaManutencao = input.nextInt();
+
+			switch (salaManutencao) {
+			case 1:
+				PerguntasOxigenio();
+				break;
+			case 2:
+				PerguntasReator();
+				break;
+			case 3:
+				PerguntasPortas();
+				break;
+			case 4:
+				PerguntasAA();
+				break;
+			default:
+				System.out.println("Comando inválido, digite novamente: ");
+			}
+		} while (salaManutencao < 1 || salaManutencao > 4);
+		
+		
 		System.out.println("Deseja voltar para Sala de Comando? (s/n)");
 		char opcao = input.next().charAt(0);
 		if (opcao == 's') {
@@ -252,7 +283,53 @@ public class Game {
 			salaManutencao();
 		}
 	}
-
+	static void PerguntasOxigenio() {
+		System.out.println("Você Acesso reparos de Oxigénio!");
+		//adicionar 5 perguntas e escolher uma atraves do random
+		System.out.println("Deseja voltar para Sala de Comando? (s/n)");
+		char opcao = input.next().charAt(0);
+		if (opcao == 's') {
+			salaComando();
+		} else {
+			PerguntasOxigenio();
+		}
+	}
+static void PerguntasReator() {
+	System.out.println("Você Acesso reparos do Reator!");
+	//adicionar 5 perguntas e escolher uma atraves do random
+	System.out.println("Deseja voltar para Sala de Comando? (s/n)");
+		char opcao = input.next().charAt(0);
+		if (opcao == 's') {
+			salaComando();
+		} else {
+			PerguntasReator();
+		}
+	}
+static void PerguntasPortas() {
+	System.out.println("Você Acesso reparos das portas da nave!");
+	//adicionar 5 perguntas e escolher uma atraves do random
+	
+	System.out.println("Deseja voltar para Sala de Comando? (s/n)");
+	char opcao = input.next().charAt(0);
+	if (opcao == 's') {
+		salaComando();
+	} else {
+		PerguntasPortas();
+	}
+}
+static void PerguntasAA() {
+	
+	System.out.println("Você Acesso reparos a (definir) !");
+	//adicionar 5 perguntas e escolher uma atraves do random
+	
+	System.out.println("Deseja voltar para Sala de Comando? (s/n)");
+	char opcao = input.next().charAt(0);
+	if (opcao == 's') {
+		salaComando();
+	} else {
+		PerguntasAA();
+	}
+}
 	public static void main(String[] args) {
 		int op;
 		char classe;
