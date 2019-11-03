@@ -10,7 +10,7 @@
  
  Computing concepts questions;
  
- Restricted and must follow the Java _structured method._
+ Must follow Java _structured method._
  
  
  
