@@ -255,15 +255,15 @@ public class Game {
 
 	public static void main(String[] args) {
 		int op;
-		char returnMenu, classe, opcao;
+		char classe;
 		telaInicial(); // tela inicial com o logo e o nome do jogo
 		do {
 			op = menu(); // menu de opcoes
 			if (op == 2) {
-				returnMenu = opcoesJogo();
+				opcoesJogo();
 			}
 			if (op == 3) {
-				returnMenu = sobreJogo();
+				sobreJogo();
 			}
 
 		} while (op != 1 && op != 4);
