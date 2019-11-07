@@ -360,7 +360,7 @@ static void PerguntasAA() {
 		System.out.println("\n ========== Introdução ========= \n");
 
 		do {
-			String classeEscolhida = escolhaClasse(); // introduz a tabela de classes
+			String classeEscolhida = escolhaClasse(); // introduz a tabela de classes teste
 			classe = informacoesClasse(classeEscolhida); // pega a escolha de classe e traz pra variavel
 		} while (validaClasse(classe) != true); // se a classe não for valida, volta ao procedimento de escolha
 
