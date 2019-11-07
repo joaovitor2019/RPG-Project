@@ -252,6 +252,14 @@ public class Game {
 				+ "╚═══╩═══════════════════════════╝");
 		
 		int salaManutencao = 0;
+		System.out.println("Deseja voltar para Sala de Comando? (s/n)");
+		char opcao = input.next().charAt(0);
+		if (opcao == 's') {
+			salaComando();
+		} else {
+			salaManutencao();
+		}
+		
 		do {
 			System.out.println("Digite para acessar: ");
 			salaManutencao = input.nextInt();
@@ -275,16 +283,10 @@ public class Game {
 		} while (salaManutencao < 1 || salaManutencao > 4);
 		
 		
-		System.out.println("Deseja voltar para Sala de Comando? (s/n)");
-		char opcao = input.next().charAt(0);
-		if (opcao == 's') {
-			salaComando();
-		} else {
-			salaManutencao();
-		}
+		
 	}
 	static void PerguntasOxigenio() {
-		System.out.println("Você Acesso reparos de Oxigénio!");
+		System.out.println("Você Acessou Reparos de Oxigénio!");
 		//adicionar 5 perguntas e escolher uma atraves do random
 		System.out.println("Deseja voltar para Sala de Comando? (s/n)");
 		char opcao = input.next().charAt(0);
@@ -295,7 +297,7 @@ public class Game {
 		}
 	}
 static void PerguntasReator() {
-	System.out.println("Você Acesso reparos do Reator!");
+	System.out.println("Você Acessou Reparos do Reator!");
 	//adicionar 5 perguntas e escolher uma atraves do random
 	System.out.println("Deseja voltar para Sala de Comando? (s/n)");
 		char opcao = input.next().charAt(0);
@@ -306,7 +308,7 @@ static void PerguntasReator() {
 		}
 	}
 static void PerguntasPortas() {
-	System.out.println("Você Acesso reparos das portas da nave!");
+	System.out.println("Você Acessou Reparos das portas da nave!");
 	//adicionar 5 perguntas e escolher uma atraves do random
 	
 	System.out.println("Deseja voltar para Sala de Comando? (s/n)");
@@ -319,7 +321,7 @@ static void PerguntasPortas() {
 }
 static void PerguntasAA() {
 	
-	System.out.println("Você Acesso reparos a (definir) !");
+	System.out.println("Você Acessou Reparos a (definir) !");
 	//adicionar 5 perguntas e escolher uma atraves do random
 	
 	System.out.println("Deseja voltar para Sala de Comando? (s/n)");
